@@ -1,0 +1,22 @@
+[alias]
+    co = checkout
+    ci = commit
+    st = status
+    br = branch
+    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+    type = cat-file -t
+    dump = cat-file -p
+    t = tag -l -n2
+
+    branches = branch -a
+    tags = tag
+    stashes = stash list
+    unstage = reset -q HEAD --
+    discard = checkout --
+    uncommit = reset --mixed HEAD~1
+    amend = commit --amend
+    graph = log --graph -10 --branches --remotes --tags --format=format:'%Cgreen%h%Creset• %<(75,trunc)%s (%cN, %cr) %Cred%d' --date-order
+    precommit = diff --cached --diff-algorithm=minimal -w
+
+[core]
+	excludesfile = ~/.gitignore
