@@ -60,8 +60,8 @@ imap <right> <nop>
 " If you like long lines with line wrapping enabled, this solves the problem that pressing down
 " jumpes your cursor “over” the current line to the next line. It changes behaviour so that it jumps
 " to the next row in the editor (much more natural)
-" nnoremap j gj
-" nnoremap k gk
+nnoremap j gj
+nnoremap k gk
 
 " Easy window navigation
 map <C-h> <C-w>h
@@ -122,3 +122,10 @@ vnoremap <C-]> :CtrlPtjumpVisual<cr>
 nmap \l :setlocal number!<CR>
 nmap \o :set paste!<CR>
 nmap \q :nohlsearch<CR>
+
+
+" "A good vimrc"
+nnoremap B ^
+nnoremap E $
+nnoremap $ <nop>
+nnoremap ^ <nop>
