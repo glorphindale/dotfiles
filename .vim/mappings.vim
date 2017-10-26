@@ -123,9 +123,6 @@ nmap \l :setlocal number!<CR>
 nmap \o :set paste!<CR>
 nmap \q :nohlsearch<CR>
 
-
-" "A good vimrc"
-nnoremap B ^
-nnoremap E $
-nnoremap $ <nop>
-nnoremap ^ <nop>
+" Tmux
+" Repeat last command in next pane shell
+nmap \r :!tmux send-keys -t 0:2 C-p C-j <CR><CR>

@@ -171,17 +171,9 @@ au FileType python set softtabstop=4 shiftwidth=4 expandtab tw=100
 " Paredit
 let g:paredit_electric_return=0
 
-" syntastic
-let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_python_flake8_exe = "python2.7 -m flake8"
-let g:syntastic_lua_checkers = ['luacheck']
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" syntax checking with linters via ale
+let g:ale_linters = {'python': ['flake8']}
+let g:ale_lint_on_text_changed = 'never'
 
 " CtrlP Tags
 let g:ctrlp_tjump_only_silent = 1

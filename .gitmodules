@@ -10,9 +10,6 @@
 [submodule "bundle/paredit.vim"]
 	path = bundle/paredit.vim
 	url = https://github.com/vim-scripts/paredit.vim.git
-[submodule "bundle/syntastic"]
-	path = bundle/syntastic
-	url = https://github.com/scrooloose/syntastic.git
 [submodule "bundle/tagbar"]
 	path = bundle/tagbar
 	url = https://github.com/majutsushi/tagbar.git
@@ -40,3 +37,12 @@
 [submodule "bundle/vim-surround"]
 	path = bundle/vim-surround
 	url = https://github.com/tpope/vim-surround.git
+[submodule "airblade/vim-gitgutter"]
+	path = airblade/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git
+[submodule "sheerun/vim-polyglot"]
+	path = sheerun/vim-polyglot
+	url = https://github.com/sheerun/vim-polyglot.git
+[submodule "w0rp/ale"]
+	path = w0rpl/ale
+	url = https://github.com/w0rp/ale.git
