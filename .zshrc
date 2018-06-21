@@ -39,6 +39,8 @@ alias glog='git log --stat --color'
 alias tmux="TERM=screen-256color-bce tmux -2"
 alias g="git status -sb"
 alias gk="gitk --all"
+alias vim="nvim"
+alias gg="git graph"
 
 zsh_cache=${HOME}/.zsh/cache
 mkdir -p $zsh_cache
@@ -52,3 +54,5 @@ else
         zrecompile -p $f && rm -f $f.zwc.old
     done
 fi
+
+export FCEDIT=nvim

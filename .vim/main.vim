@@ -56,17 +56,17 @@ behave mswin
 autocmd VimEnter * set vb t_vb=
 set novb
 set noerrorbells
-set visualbell
-set t_vb=
+set novisualbell
 
 let g:syntastic_enable_signs=1
 let b:shell = 'zsh'
 
 source ~/.vim/mappings.vim
+source ~/.vim/local_mappings.vim
 source ~/.vim/tags.vim
 
 nnoremap <C-e> :Eval<CR>
-" nnoremap E :%Eval<CR>
+nnoremap E :%Eval<CR>
 
 set path=.
 
@@ -82,7 +82,9 @@ set foldlevelstart=10  " open most folds by default
 set foldnestmax=10
 " open/close folds with spacebar
 nnoremap <space> za
-set foldmethod=indent
+set foldmethod=syntax
+" Syntax does not work with Python strangely, workaround that
+au BufRead,BufNewFile *.py,*.pyw set foldmethod=indent
 
 
 " Do NOT unload buffer when switch to another one
@@ -98,9 +100,6 @@ set et!
 set ai
 set nobackup
 set writebackup
-" Turn off any bells
-set novisualbell
-set t_vb=   
 " No menu, toolbar and big tab buttons
 set guioptions-=e
 set guioptions-=T
@@ -172,12 +171,17 @@ au FileType python set softtabstop=4 shiftwidth=4 expandtab tw=100
 let g:paredit_electric_return=0
 
 " syntax checking with linters via ale
-let g:ale_linters = {'python': ['flake8']}
+let g:ale_linters = {'python': ['flake8'], 'clojure': []}
 let g:ale_lint_on_text_changed = 'never'
+let g:ale_python_flake8_executable = "flake8_2.7"
 
 " CtrlP Tags
 let g:ctrlp_tjump_only_silent = 1
 let g:ctrlp_switch_buffer = 0  " always open in new buffer
+set wildignore+=*/env*/*,*/out/*,*/target/*,*/venv*/*
+
+" NERDTree
+let NERDTreeIgnore=['\~$', '\.pyc']
 
 " Hardtime
 let g:hardtime_default_on = 0
@@ -186,6 +190,7 @@ let g:hardtime_ignore_quickfix = 1
 
 " Neovim
 set ttimeoutlen=10  " Remove slugishness when using Ctrl+[ to leave insert mode
+set inccommand=nosplit  " Inline change preview with s/// command
 
 
 

@@ -46,3 +46,6 @@
 [submodule "w0rp/ale"]
 	path = w0rpl/ale
 	url = https://github.com/w0rp/ale.git
+[submodule "clojure-vim/acid"]
+	path = clojure-vim/acid
+    url = https://github.com/clojure-vim/acid.nvim.git

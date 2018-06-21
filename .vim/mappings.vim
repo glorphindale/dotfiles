@@ -20,8 +20,8 @@ function SMap(key, action, ...)
     endif
 endfunction
 
-" F12 to generate ctags for omnicppcomplete
-call SMap("<F12>", ":!ctags -R --c++-kinds=+pl --fields=+iaS --extra=+q --exclude=venv .<CR>")
+" F12 to generate ctags
+call SMap("<F12>", ":!ctags -R --c++-kinds=+pl --fields=+iaS --extra=+q .<CR>")
 call SMap("<F9>", ":!ctags -R -f .tags  --languages=Clojure .<CR>")
 
 call SMap("<F2>", ":NERDTreeToggle<cr>")
@@ -124,5 +124,5 @@ nmap \o :set paste!<CR>
 nmap \q :nohlsearch<CR>
 
 " Tmux
-" Repeat last command in next pane shell
+" Repeat last command in second pane shell
 nmap \r :!tmux send-keys -t 0:2 C-p C-j <CR><CR>
