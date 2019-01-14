@@ -5,8 +5,8 @@ call pathogen#infect()
 call pathogen#infect('bundle/{}')
 
 " ======================== UI Config
-set cursorline
-highlight lCursor guifg=NONE guibg=Cyan
+set nocursorline
+" highlight lCursor guifg=NONE guibg=Cyan
 
 if has("win32")
     set gfn=Consolas:h11:cANSI
@@ -14,10 +14,42 @@ else
     set guifont="FuraMono-Regular for Powerline":h14
 endif
 
+" colorscheme and related stuff
+let g:airline#extensions#keymap#enabled = '0'
+set termguicolors
+let g:base16_airline=1
+let base16colorspace=256
+let g:base16_transparent_background = 1
 set background=dark
-colorscheme solarized
-let g:airline_theme='solarized'  " Airline
+" Nice pair
+" colorscheme default
+" let g:airline_theme='wombat'
+colorscheme lucius
+let g:airline_theme='lucius'
 
+""""""""""""" Old and tried, transparent in gnome terminal
+" set background=dark
+" colorscheme delek
+" let g:airline_theme='seagull'
+""""""""" Nice and dark
+" set background=dark
+" colorscheme tender
+" let g:airline_theme='term'  ;; airline not so nice, as 'tender' does not work
+""""""""" light
+" set background=light
+" colorscheme lucius
+" LuciusLight
+" let g:airline_theme='silver'
+""""""""" or dark
+" set background=dark
+" colorscheme lucius
+" let g:airline_theme='wombat'
+""""""""" colorful, good light and dark
+" set background=light
+" colorscheme gruvbox
+" let g:airline_theme='gruvbox'
+
+" Visual
 highlight TooLongLine term=reverse ctermfg=Yellow ctermbg=Black
 match TooLongLine /.\%>100v/
 
@@ -174,6 +206,7 @@ let g:paredit_electric_return=0
 let g:ale_linters = {'python': ['flake8'], 'clojure': []}
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_python_flake8_executable = "flake8_2.7"
+let g:ale_c_gcc_options='-std=c11 -Wall -D_POSIX_C_SOURCE=200112L'
 
 " CtrlP Tags
 let g:ctrlp_tjump_only_silent = 1
@@ -196,3 +229,6 @@ set inccommand=nosplit  " Inline change preview with s/// command
 
 " Comments should be shouting, should be here to not be override by other files
 highlight Comment ctermfg=7 guifg=#80a0ff
+
+" Gitgutter
+set updatetime=1000
